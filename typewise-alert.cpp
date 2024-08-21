@@ -81,7 +81,7 @@ void sendToEmail(BreachType breachType) {
     const char* messages[] = {"Hi, the temperature is too low\n","Hi, the temperature is too high\n"};
     
     if (breachType == TOO_LOW || breachType == TOO_HIGH) {
-        printMessage("To: %s\n", recepient);
-        printMessage("%s", messages[breachType]);
+        printToMessage(recepient);
+        printMessage(messages[breachType+1]);
     }
 }
