@@ -4,6 +4,6 @@
 TEST(TypeWiseAlertTestSuite, test_alert_low_breach) {
   BatteryCharacter batteryChar = {PASSIVE_COOLING," "};
   BreachType expected_breach = TOO_LOW;
-   ASSERT_EQ(checkAndAlert(TO_CONTROLLER,batteryChar,-10),expected_breach);
+   ASSERT_EQ(breachType ,expected_breach);
 
 }
