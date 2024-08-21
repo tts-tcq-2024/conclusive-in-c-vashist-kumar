@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-void printMsg(const char *message) {
+void printMsg(const char *message,const char* *message) {
     printf("%s\n", message);
 }
 
