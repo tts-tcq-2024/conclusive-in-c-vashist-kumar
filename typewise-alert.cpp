@@ -11,23 +11,40 @@ BreachType inferBreach(double value, double lowerLimit, double upperLimit) {
   return NORMAL;
 }
 
+ bool checkActiveHi(CoolingType coolingType){
+   if(coolingType == HI_ACTIVE_COOLING){
+      lowerLimit = 0;
+      upperLimit = 45;
+     return true;
+    }
+     return false;
+   }
+
+ bool checkPassiveCooling(CoolingType coolingType){
+   if(coolingType == PASSIVE_COOLING){
+      lowerLimit = 0;
+      upperLimit = 35;
+     return true;
+    }
+     return false;
+   }
+
+ bool checkActiveMed(CoolingType coolingType){
+   if(coolingType == MED_ACTIVE_COOLING){
+      lowerLimit = 0;
+      upperLimit = 40;
+     return true;
+    }
+     return false;
+   }
+
 BreachType classifyTemperatureBreach(CoolingType coolingType, double temperatureInC) {
   int lowerLimit = 0;
   int upperLimit = 0;
-  switch(coolingType) {
-    case PASSIVE_COOLING:
-      lowerLimit = 0;
-      upperLimit = 35;
-      break;
-    case HI_ACTIVE_COOLING:
-      lowerLimit = 0;
-      upperLimit = 45;
-      break;
-    case MED_ACTIVE_COOLING:
-      lowerLimit = 0;
-      upperLimit = 40;
-      break;
-  }
+
+  checkActiveHi(coolingType);
+  checkPassiveCooling(coolingType);
+  checkActiveMed(coolingType);
   return inferBreach(temperatureInC, lowerLimit, upperLimit);
 }
 
@@ -52,19 +69,19 @@ void sendToController(BreachType breachType) {
   printf("%x : %x\n", header, breachType);
 }
 
-void sendToEmail(BreachType breachType) {
-  const char* recepient = "a.b@c.com";
-  switch(breachType) {
-    case TOO_LOW:
+bool lowTempMsg(BreachType breachType){
+  if(breachType == 1) {
       printf("To: %s\n", recepient);
       printf("Hi, the temperature is too low\n");
-      break;
-    case TOO_HIGH:
-      printf("To: %s\n", recepient);
-      printf("Hi, the temperature is too high\n");
-      break;
-    case NORMAL:
-      break;
   }
+}
 
+void sendToEmail(BreachType breachType) {
+    const char* recepient = "a.b@c.com";
+    static const char* messages[] = {"Hi, the temperature is too low\n","Hi, the temperature is too high\n"};
+
+    if (breachType == TOO_LOW || breachType == TOO_HIGH) {
+        printf("To: %s\n", recepient);
+        printf("%s", messages[breachType]);
+    }
 }
