@@ -79,9 +79,9 @@ bool lowTempMsg(BreachType breachType){
 void sendToEmail(BreachType breachType) {
     const char* recepient = "a.b@c.com";
     static const char* messages[] = {"Hi, the temperature is too low\n","Hi, the temperature is too high\n"};
-
+    
     if (breachType == TOO_LOW || breachType == TOO_HIGH) {
-        printf("To: %s\n", recepient);
-        printf("%s", messages[breachType]);
+        printMessage("To: %s\n", recepient);
+        printMessage("%s", messages[breachType]);
     }
 }
