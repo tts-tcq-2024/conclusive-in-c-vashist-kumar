@@ -22,9 +22,11 @@ BreachType classifyTemperatureBreach(CoolingType coolingType, double temperature
   return inferBreach(temperatureInC, lowerLimit, upperLimit);
 }
 
+BreachType (*classifyTemperatureBreachPtr)(CoolingType, double) = classifyTemperatureBreach;
+
 void checkAndAlert(AlertTarget alertTarget, BatteryCharacter batteryChar, double temperatureInC) {
 
-  BreachType breachType = classifyTemperatureBreach(
+  BreachType breachType = classifyTemperatureBreachPtr(
     batteryChar.coolingType, temperatureInC
   );
 
