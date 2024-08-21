@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include <assert.h>
+#include <cassert.h>
 #include "typewise-alert.h"
 
 TEST(TypeWiseAlertTestSuite, test_alert_low_breach) {
