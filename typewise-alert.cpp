@@ -12,33 +12,6 @@ BreachType inferBreach(double value, double lowerLimit, double upperLimit) {
   return NORMAL;
 }
 
- // bool checkActiveHi(CoolingType coolingType){
- //   if(coolingType == HI_ACTIVE_COOLING){
- //      lowerLimit = 0;
- //      upperLimit = 45;
- //     return true;
- //    }
- //     return false;
- //   }
-
- // bool checkPassiveCooling(CoolingType coolingType){
- //   if(coolingType == PASSIVE_COOLING){
- //      lowerLimit = 0;
- //      upperLimit = 35;
- //     return true;
- //    }
- //     return false;
- //   }
-
- // bool checkActiveMed(CoolingType coolingType){
- //   if(coolingType == MED_ACTIVE_COOLING){
- //      lowerLimit = 0;
- //      upperLimit = 40;
- //     return true;
- //    }
- //     return false;
- //   }
-
 int lower_limit[] = {0,0,0};
 int upper_limit[] = {35,45,40};
 
