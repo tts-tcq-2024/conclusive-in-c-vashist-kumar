@@ -2,8 +2,9 @@
 #include "typewise-alert.h"
 
 TEST(TypeWiseAlertTestSuite, test_alert_low_breach) {
-  // BatteryCharacter batteryChar = {PASSIVE_COOLING," "};
-  // BreachType expected_breach = TOO_LOW;
-  //  ASSERT_EQ(breachType ,expected_breach);
+  BatteryCharacter batteryChar = {PASSIVE_COOLING," "};
+  BreachType expected_breach = TOO_LOW;
+  checkAndAlert(TO_CONTROLLER,batteryChar,-10);
+  // ASSERT_EQ(breachType ,expected_breach);
 
 }
