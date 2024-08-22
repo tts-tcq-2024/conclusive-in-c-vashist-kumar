@@ -10,6 +10,19 @@ extern void checkAndAlertMock(AlertTarget alertTarget, BatteryCharacter batteryC
 extern void sendToControllerMock(BreachType breachType);
 extern  void sendToEmailMock(BreachType breachType);
 
+void testprintsendtocontroller() {
+    
+    memset(buffer, 0, sizeof(buffer));
+    setvbuf(stdout, buffer, _IOFBF, sizeof(buffer));
+    BreachType breachType = TOO_HIGH;
+    sendToControllerMock(breachType);
+    fflush(stdout);
+    const char* expected = 
+    printf("%s",expected);
+    assert(strcmp(buffer, expected) == 0);
+
+}
+
 void testprintsendtoemail() {
     
     memset(buffer, 0, sizeof(buffer));
