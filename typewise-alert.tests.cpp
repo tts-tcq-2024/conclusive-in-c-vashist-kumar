@@ -2,7 +2,7 @@
 #include "typewise-alertUtils.h"
 
 #define BUFFER_SIZE 1024
-char buffer[BUFFER_SIZE];
+const char* buffer;
 extern BreachType breachTypeMock;
 extern void checkAndAlertMock(AlertTarget alertTarget, BatteryCharacter batteryChar, double temperatureInC);
 extern void sendToControllerMock(BreachType breachType);
