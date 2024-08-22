@@ -1,10 +1,11 @@
-#include <gtest/gtest.h>
+er#include <gtest/gtest.h>
 #include "typewise-alertUtils.h"
 
 
 extern BreachType breachTypeMock;
 extern void checkAndAlertMock(AlertTarget alertTarget, BatteryCharacter batteryChar, double temperatureInC);
-
+extern sendToControllerMock();
+extern 
 
 TEST(TypeWiseAlertTestSuite, test_alert_low_breach_to_controller) {
   BatteryCharacter batteryChar = {PASSIVE_COOLING," "};
