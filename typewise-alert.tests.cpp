@@ -13,7 +13,7 @@ TEST(TypeWiseAlertTestSuite, test_alert_low_breach) {
   ASSERT_EQ(breachTypeMock ,expected_breach);
 }
 
-TEST(TypeWiseAlertTestSuite, test_alert_hi_active_cooling) {
+TEST(TypeWiseAlertTestSuite, test_alert_hi_breach) {
   BatteryCharacter batteryChar = {PASSIVE_COOLING," "};
   BreachType expected_breach = TOO_HIGH;
   checkAndAlert(TO_CONTROLLER,batteryChar,50);
@@ -21,7 +21,7 @@ TEST(TypeWiseAlertTestSuite, test_alert_hi_active_cooling) {
   ASSERT_EQ(breachTypeMock ,expected_breach);
 }
 
-TEST(TypeWiseAlertTestSuite, test_alert_low_breach) {
+TEST(TypeWiseAlertTestSuite, test_alert_normal) {
   BatteryCharacter batteryChar = {PASSIVE_COOLING," "};
   BreachType expected_breach = NORMAL;
   checkAndAlert(TO_CONTROLLER,batteryChar,25);
