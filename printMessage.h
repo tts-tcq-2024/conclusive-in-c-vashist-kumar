@@ -2,10 +2,10 @@
 #include <string.h>
 
 void printMsg(const char *message) {
-    printf("%s\n", message);
+    printf("%s", message);
 }
 void printtoMsg(const char *message) {
-    printf("To: %s\n", message);
+    printf("To: %s", message);
 }
 
 void printcontroller(const unsigned short header,BreachType breachtype) {
