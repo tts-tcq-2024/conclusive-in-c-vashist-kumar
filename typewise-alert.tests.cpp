@@ -1,6 +1,5 @@
 #include <gtest/gtest.h>
 #include "typewise-alertUtils.h"
-#include "printMessage.h"
 
 
 extern BreachType breachTypeMock;
