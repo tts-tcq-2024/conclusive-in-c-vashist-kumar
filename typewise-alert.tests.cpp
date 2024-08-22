@@ -5,6 +5,7 @@
 extern BreachType breachTypeMock;
 extern void checkAndAlertMock(AlertTarget alertTarget, BatteryCharacter batteryChar, double temperatureInC);
 
+
 TEST(TypeWiseAlertTestSuite, test_alert_low_breach_to_controller) {
   BatteryCharacter batteryChar = {PASSIVE_COOLING," "};
   BreachType expected_breach = TOO_LOW;
