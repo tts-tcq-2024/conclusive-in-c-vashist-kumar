@@ -24,8 +24,8 @@ TEST(TypeWiseAlertTestSuite, test_alert_hi_breach) {
 TEST(TypeWiseAlertTestSuite, test_alert_normal) {
   BatteryCharacter batteryChar = {PASSIVE_COOLING," "};
   BreachType expected_breach = NORMAL;
-  checkAndAlert(TO_CONTROLLER,batteryChar,25);
-  checkAndAlertMock(TO_CONTROLLER,batteryChar,25);
+  checkAndAlert(TO_EMAIL,batteryChar,25);
+  checkAndAlertMock(TO_EMAIL,batteryChar,25);
   ASSERT_EQ(breachTypeMock ,expected_breach);
 }
 
