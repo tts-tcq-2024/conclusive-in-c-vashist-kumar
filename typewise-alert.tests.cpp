@@ -10,7 +10,8 @@ extern  void sendToEmailMock(BreachType breachType);
 
 void testprintsendtoemail() {
     memset(buffer, 0, sizeof(buffer));
-    sendToEmailMock(TOO_HIGH);
+    BreachType breachType = TOO_HIGH;
+    sendToEmailMock(breachType);
     const char* expected = "To: a.b@c.com\nHi, the temperature is too high\n";
     assert(strcmp(buffer, expected) == 0);
 
