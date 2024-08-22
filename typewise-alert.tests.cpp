@@ -5,6 +5,21 @@
 extern BreachType breachTypeMock;
 extern void checkAndAlertMock(AlertTarget alertTarget, BatteryCharacter batteryChar, double temperatureInC);
 
+void sendToControllerMock(BreachType breachType) {
+  const unsigned short header = 0xfeed;
+  printf("%x : %x\n", header, breachType);
+}
+
+void sendToEmailMock(BreachType breachType) {
+    const char* recepient = "a.b@c.com";
+    const char* messages[] = {"","Hi, the temperature is too low\n","Hi, the temperature is too high\n"};
+    
+    if (breachType == TOO_LOW || breachType == TOO_HIGH) {
+        printToMessage(recepient);
+        printMessage(messages[breachType]);
+    }
+}
+
 TEST(TypeWiseAlertTestSuite, test_alert_low_breach_to_controller) {
   BatteryCharacter batteryChar = {PASSIVE_COOLING," "};
   BreachType expected_breach = TOO_LOW;
