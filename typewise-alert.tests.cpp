@@ -9,12 +9,19 @@ extern void sendToControllerMock(BreachType breachType);
 extern  void sendToEmailMock(BreachType breachType);
 
 void testprintsendtoemail() {
-    memset(buffer, 0, sizeof(buffer));
-    BreachType breachType = TOO_HIGH;
-    sendToEmailMock(breachType);
-    const char* expected = "To: a.b@c.com\nHi, the temperature is too high\n";
-    assert(strcmp(buffer, expected) == 0);
+    // memset(buffer, 0, sizeof(buffer));
+    // BreachType breachType = TOO_HIGH;
+    // sendToEmailMock(breachType);
+    // const char* expected = "To: a.b@c.com\nHi, the temperature is too high\n";
+    // assert(strcmp(buffer, expected) == 0);
 
+    memset(buffer, 0, sizeof(buffer));
+    setvbuf(stdout, buffer, _IOFBF, sizeof(buffer));
+    sendToEmailMock(TOO_LOW);
+    fflush(stdout);
+    const char* expected = "To: a.b@c.com\nHi, the temperature is too low\n";
+    assert(strcmp(buffer, expected) == 0);
+    
     // memset(buffer, 0, sizeof(buffer));
     // sendToEmailMock(TOO_LOW);
     // expected = "To: a.b@c.com\nHi, the temperature is too low\n";
