@@ -18,7 +18,7 @@ void testprintsendtocontroller() {
     sendToControllerMock(breachType);
     fflush(stdout);
     const char* expected = "feed : 1";
-    // printf("%s",expected);
+    printf("%s",expected);
     assert(strcmp(buffer, expected) == 0);
 
 }
