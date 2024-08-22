@@ -24,6 +24,8 @@ void testprintsendtoemail() {
     "To: a.b@c.com\n"
     "Hi, the temperature is too low\n";
     assert(strcmp(buffer, expected) == 0);
+
+    
     
     
     // memset(buffer, 0, sizeof(buffer));
