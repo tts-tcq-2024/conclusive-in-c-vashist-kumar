@@ -5,7 +5,7 @@ er#include <gtest/gtest.h>
 extern BreachType breachTypeMock;
 extern void checkAndAlertMock(AlertTarget alertTarget, BatteryCharacter batteryChar, double temperatureInC);
 extern sendToControllerMock(BreachType breachType);
-extern 
+extern  sendToEmailMock(BreachType breachType);
 
 TEST(TypeWiseAlertTestSuite, test_alert_low_breach_to_controller) {
   BatteryCharacter batteryChar = {PASSIVE_COOLING," "};
