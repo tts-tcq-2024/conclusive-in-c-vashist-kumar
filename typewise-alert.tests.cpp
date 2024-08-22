@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "typewise-alert.h"
+#include "typewise-alertUtils.h"
 #include "printMessage.h"
 
 
