@@ -1,4 +1,5 @@
 #include "typewise-alertUtils.h"
+#include "printMessage.h"
 #include <stdio.h>
 
 BreachType inferBreach(double value, double lowerLimit, double upperLimit) {
