@@ -14,10 +14,10 @@ TEST(TypeWiseAlertTestSuite, test_alert_low_breach) {
 }
 
 TEST(TypeWiseAlertTestSuite, test_alert_hi_active_cooling) {
-  BatteryCharacter batteryChar = {HI_ACTIVE_COOLING," "};
+  BatteryCharacter batteryChar = {PASSIVE_COOLING," "};
   BreachType expected_breach = TOO_LOW;
-  checkAndAlert(TO_CONTROLLER,batteryChar,-10);
-  checkAndAlertMock(TO_CONTROLLER,batteryChar,-10);
+  checkAndAlert(TO_CONTROLLER,batteryChar,50);
+  checkAndAlertMock(TO_CONTROLLER,batteryChar,50);
   ASSERT_EQ(breachTypeMock ,expected_breach);
 }
 
