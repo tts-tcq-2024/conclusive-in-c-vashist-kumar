@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
 #include "typewise-alertUtils.h"
 
-#define BUFFER_SIZE 1024
+#define BUFFER_SIZE 2048
 char buffer[BUFFER_SIZE];
 extern BreachType breachTypeMock;
 extern void checkAndAlertMock(AlertTarget alertTarget, BatteryCharacter batteryChar, double temperatureInC);
@@ -19,10 +19,10 @@ void testprintsendtoemail() {
     setvbuf(stdout, buffer, _IOFBF, sizeof(buffer));
     BreachType breachType = TOO_LOW;
     sendToEmailMock(breachType);
-    
+    fflush(stdout);
     const char* expected = "To: a.b@c.com\nHi, the temperature is too low";
     assert(strcmp(buffer, expected) == 0);
-    fflush(stdout);
+    
     
     // memset(buffer, 0, sizeof(buffer));
     // sendToEmailMock(TOO_LOW);
