@@ -12,3 +12,35 @@ TEST(TypeWiseAlertTestSuite, test_alert_low_breach) {
   checkAndAlertMock(TO_CONTROLLER,batteryChar,-10);
   ASSERT_EQ(breachTypeMock ,expected_breach);
 }
+
+TEST(TypeWiseAlertTestSuite, test_alert_low_breach) {
+  BatteryCharacter batteryChar = {HI_ACTIVE_COOLING," "};
+  BreachType expected_breach = TOO_LOW;
+  checkAndAlert(TO_CONTROLLER,batteryChar,-10);
+  checkAndAlertMock(TO_CONTROLLER,batteryChar,-10);
+  ASSERT_EQ(breachTypeMock ,expected_breach);
+}
+
+// TEST(TypeWiseAlertTestSuite, test_alert_low_breach) {
+//   BatteryCharacter batteryChar = {PASSIVE_COOLING," "};
+//   BreachType expected_breach = TOO_LOW;
+//   checkAndAlert(TO_CONTROLLER,batteryChar,-10);
+//   checkAndAlertMock(TO_CONTROLLER,batteryChar,-10);
+//   ASSERT_EQ(breachTypeMock ,expected_breach);
+// }
+
+// TEST(TypeWiseAlertTestSuite, test_alert_low_breach) {
+//   BatteryCharacter batteryChar = {PASSIVE_COOLING," "};
+//   BreachType expected_breach = TOO_LOW;
+//   checkAndAlert(TO_CONTROLLER,batteryChar,-10);
+//   checkAndAlertMock(TO_CONTROLLER,batteryChar,-10);
+//   ASSERT_EQ(breachTypeMock ,expected_breach);
+// }
+
+// TEST(TypeWiseAlertTestSuite, test_alert_low_breach) {
+//   BatteryCharacter batteryChar = {PASSIVE_COOLING," "};
+//   BreachType expected_breach = TOO_LOW;
+//   checkAndAlert(TO_CONTROLLER,batteryChar,-10);
+//   checkAndAlertMock(TO_CONTROLLER,batteryChar,-10);
+//   ASSERT_EQ(breachTypeMock ,expected_breach);
+// }
