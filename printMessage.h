@@ -5,7 +5,7 @@ void printMsg(const char *message) {
     printf("%s", message);
 }
 void printtoMsg(const char *message) {
-    printf("To: %s", message);
+    printf("To: %s\n", message);
 }
 
 void printcontroller(const unsigned short header,BreachType breachtype) {
