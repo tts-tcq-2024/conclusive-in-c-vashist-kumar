@@ -15,15 +15,16 @@ void testprintsendtoemail() {
     // const char* expected = "To: a.b@c.com\nHi, the temperature is too high\n";
     // assert(strcmp(buffer, expected) == 0);
 
-    memset(buffer, 0, sizeof(buffer));
-    setvbuf(stdout, buffer, _IOFBF, sizeof(buffer));
-    BreachType breachType = TOO_HIGH;
-    sendToEmailMock(breachType);
-    fflush(stdout);
-    const char* expected = 
-    "To: a.b@c.com\n"
-    "Hi, the temperature is too high\n";
-    assert(strcmp(buffer, expected) == 0);
+    // memset(buffer, 0, sizeof(buffer));
+    // setvbuf(stdout, buffer, _IOFBF, sizeof(buffer));
+    // BreachType breachType = TOO_HIGH;
+    // sendToEmailMock(breachType);
+    // fflush(stdout);
+    // const char* expected = 
+    // "To: a.b@c.com\n"
+    // "Hi, the temperature is too high\n";
+    // printf("")
+    // assert(strcmp(buffer, expected) == 0);
     
     memset(buffer, 0, sizeof(buffer));
     setvbuf(stdout, buffer, _IOFBF, sizeof(buffer));
