@@ -1,4 +1,5 @@
 #include "typewise-alertUtils.h"
+#include "printMessage.h"
 
 void sendToControllerMock(BreachType breachType) {
   const unsigned short headerMock = 0xfeed;
