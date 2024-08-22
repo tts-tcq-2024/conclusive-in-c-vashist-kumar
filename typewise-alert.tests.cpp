@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
 #include "typewise-alertUtils.h"
 
-#define BUFFER_SIZE 1024
+#define BUFFER_SIZE 1000
 char buffer[BUFFER_SIZE];
 extern BreachType breachTypeMock;
 extern void checkAndAlertMock(AlertTarget alertTarget, BatteryCharacter batteryChar, double temperatureInC);
