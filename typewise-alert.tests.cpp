@@ -1,5 +1,6 @@
 #include <gtest/gtest.h>
 #include "typewise-alert.h"
+#include "printMessage.h"
 
 
 extern BreachType breachTypeMock;
@@ -7,7 +8,7 @@ extern void checkAndAlertMock(AlertTarget alertTarget, BatteryCharacter batteryC
 
 void sendToControllerMock(BreachType breachType) {
   const unsigned short header = 0xfeed;
-  printf("%x : %x\n", header, breachType);
+  printtocontroller("%x : %x\n", header, breachType);
 }
 
 void sendToEmailMock(BreachType breachType) {
