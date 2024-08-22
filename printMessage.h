@@ -8,11 +8,11 @@ void printtoMsg(const char *message) {
     printf("To: %s\n", message);
 }
 
-void printcontroller(const char *header,BreachType breachtype) {
+void printcontroller(const unsigned short header,BreachType breachtype) {
     printf("%x : %x\n", message);
 }
 
 
 void (*printMessage)(const char *message) = printMsg;
 void (*printToMessage)(const char *message) = printtoMsg;
-void (*printtocontroller)(const char *header,BreachType breachtype) = printcontroller;
+void (*printtocontroller)(const unsigned short header,BreachType breachtype) = printcontroller;
