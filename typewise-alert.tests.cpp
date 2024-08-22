@@ -5,7 +5,7 @@
 extern BreachType breachTypeMock;
 extern void checkAndAlertMock(AlertTarget alertTarget, BatteryCharacter batteryChar, double temperatureInC);
 
-TEST(TypeWiseAlertTestSuite, test_alert_low_breach) {
+TEST(TypeWiseAlertTestSuite, test_alert_low_breach_to_controller) {
   BatteryCharacter batteryChar = {PASSIVE_COOLING," "};
   BreachType expected_breach = TOO_LOW;
   checkAndAlert(TO_CONTROLLER,batteryChar,-10);
@@ -13,7 +13,7 @@ TEST(TypeWiseAlertTestSuite, test_alert_low_breach) {
   ASSERT_EQ(breachTypeMock ,expected_breach);
 }
 
-TEST(TypeWiseAlertTestSuite, test_alert_hi_breach) {
+TEST(TypeWiseAlertTestSuite, test_alert_hi_breach_to_controller) {
   BatteryCharacter batteryChar = {PASSIVE_COOLING," "};
   BreachType expected_breach = TOO_HIGH;
   checkAndAlert(TO_CONTROLLER,batteryChar,50);
@@ -21,7 +21,7 @@ TEST(TypeWiseAlertTestSuite, test_alert_hi_breach) {
   ASSERT_EQ(breachTypeMock ,expected_breach);
 }
 
-TEST(TypeWiseAlertTestSuite, test_alert_normal) {
+TEST(TypeWiseAlertTestSuite, test_alert_normal_to_email) {
   BatteryCharacter batteryChar = {PASSIVE_COOLING," "};
   BreachType expected_breach = NORMAL;
   checkAndAlert(TO_EMAIL,batteryChar,25);
@@ -29,13 +29,13 @@ TEST(TypeWiseAlertTestSuite, test_alert_normal) {
   ASSERT_EQ(breachTypeMock ,expected_breach);
 }
 
-// TEST(TypeWiseAlertTestSuite, test_alert_low_breach) {
-//   BatteryCharacter batteryChar = {PASSIVE_COOLING," "};
-//   BreachType expected_breach = TOO_LOW;
-//   checkAndAlert(TO_CONTROLLER,batteryChar,-10);
-//   checkAndAlertMock(TO_CONTROLLER,batteryChar,-10);
-//   ASSERT_EQ(breachTypeMock ,expected_breach);
-// }
+TEST(TypeWiseAlertTestSuite, test_alert_low_breach_to_email) {
+  BatteryCharacter batteryChar = {HI_ACTIVE_COOLING," "};
+  BreachType expected_breach = TOO_LOW;
+  checkAndAlert(TO_EMAIL,batteryChar,-10);
+  checkAndAlertMock(TO_EMAIL,batteryChar,-10);
+  ASSERT_EQ(breachTypeMock ,expected_breach);
+}
 
 // TEST(TypeWiseAlertTestSuite, test_alert_low_breach) {
 //   BatteryCharacter batteryChar = {PASSIVE_COOLING," "};
