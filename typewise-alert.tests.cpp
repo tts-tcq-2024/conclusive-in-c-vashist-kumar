@@ -8,7 +8,7 @@ extern void checkAndAlertMock(AlertTarget alertTarget, BatteryCharacter batteryC
 
 void sendToControllerMock(BreachType breachType) {
   const unsigned short header = 0xfeed;
-  printtocontroller("%x : %x\n", header, breachType);
+  printtocontroller(header, breachType);
 }
 
 void sendToEmailMock(BreachType breachType) {
