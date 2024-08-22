@@ -1,5 +1,7 @@
 #include <gtest/gtest.h>
 #include "typewise-alertUtils.h"
+#include <string.h>
+#include <assert.h>
 
 #define BUFFER_SIZE 2048
 char buffer[BUFFER_SIZE];
@@ -34,8 +36,8 @@ void testprintsendtoemail() {
    const char* expected = 
     "To: a.b@c.com\n"
     "Hi, the temperature is too low\n";
-    printf("%s",expected)
-    ASSERT_EQ(buffer, expected);
+    printf("%s",expected);
+    assert(strcmp(buffer, expected)==0);
    
 
     
