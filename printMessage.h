@@ -9,7 +9,7 @@ void printtoMsg(const char *message) {
 }
 
 void printcontroller(const unsigned short header,BreachType breachtype) {
-    printf("%x : %x\n", message);
+    printf("%x : %x\n", header, breachtype);
 }
 
 
