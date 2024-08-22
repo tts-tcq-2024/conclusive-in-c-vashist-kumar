@@ -24,6 +24,23 @@ BreachType classifyTemperatureBreach(CoolingType coolingType, double temperature
 
 BreachType (*classifyTemperatureBreachPtr)(CoolingType, double) = classifyTemperatureBreach;
 
+
+BreachType breachTypeMock;
+void checkAndAlertMock(AlertTarget alertTarget, BatteryCharacter batteryChar, double temperatureInC){
+    breachTypeMock = classifyTemperatureBreachPtr(
+    batteryChar.coolingType, temperatureInC
+  );
+
+  switch(alertTarget) {
+    case TO_CONTROLLER:
+      sendToController(breachTypeMock);
+      break;
+    case TO_EMAIL:
+      sendToEmail(breachTypeMock);
+      break;
+  }
+}
+
 void checkAndAlert(AlertTarget alertTarget, BatteryCharacter batteryChar, double temperatureInC) {
 
   BreachType breachType = classifyTemperatureBreachPtr(
