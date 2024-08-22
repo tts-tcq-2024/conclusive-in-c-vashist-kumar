@@ -25,7 +25,7 @@ void testprintsendtoemail() {
     const char* expected = 
     "To: a.b@c.com\n"
     "Hi, the temperature is too high\n";
-    printf(""%s",expected")
+    printf("%s",expected")
     assert(strcmp(buffer, expected) == 0);
     
     memset(buffer, 0, sizeof(buffer));
