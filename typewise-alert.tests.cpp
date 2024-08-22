@@ -1,4 +1,4 @@
-er#include <gtest/gtest.h>
+#include <gtest/gtest.h>
 #include "typewise-alertUtils.h"
 
 #define BUFFER_SIZE 1024
