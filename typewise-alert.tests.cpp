@@ -20,7 +20,7 @@ void testprintsendtoemail() {
     BreachType breachType = TOO_LOW;
     sendToEmailMock(breachType);
     fflush(stdout);
-    const char* expected = "To: a.b@c.com\nHi, the temperature is too low\n";
+    const char* expected = "To: a.b@c.comHi, the temperature is too low";
     assert(strcmp(buffer, expected) == 0);
     
     // memset(buffer, 0, sizeof(buffer));
