@@ -4,7 +4,7 @@ er#include <gtest/gtest.h>
 
 extern BreachType breachTypeMock;
 extern void checkAndAlertMock(AlertTarget alertTarget, BatteryCharacter batteryChar, double temperatureInC);
-extern sendToControllerMock();
+extern sendToControllerMock(BreachType breachType);
 extern 
 
 TEST(TypeWiseAlertTestSuite, test_alert_low_breach_to_controller) {
