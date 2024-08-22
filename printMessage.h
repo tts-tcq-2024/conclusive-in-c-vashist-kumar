@@ -2,7 +2,7 @@
 #include <string.h>
 
 void printMsg(const char *message) {
-    printf("%s", message);
+    printf("%s\n", message);
 }
 void printtoMsg(const char *message) {
     printf("To: %s\n", message);
