@@ -5,8 +5,8 @@
 char buffer[BUFFER_SIZE];
 extern BreachType breachTypeMock;
 extern void checkAndAlertMock(AlertTarget alertTarget, BatteryCharacter batteryChar, double temperatureInC);
-extern sendToControllerMock(BreachType breachType);
-extern  sendToEmailMock(BreachType breachType);
+extern void sendToControllerMock(BreachType breachType);
+extern  void sendToEmailMock(BreachType breachType);
 
 TEST(TypeWiseAlertTestSuite, test_alert_low_breach_to_controller) {
   BatteryCharacter batteryChar = {PASSIVE_COOLING," "};
