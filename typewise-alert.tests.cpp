@@ -8,6 +8,23 @@ extern void checkAndAlertMock(AlertTarget alertTarget, BatteryCharacter batteryC
 extern void sendToControllerMock(BreachType breachType);
 extern  void sendToEmailMock(BreachType breachType);
 
+void testprintsendtoemail() {
+    memset(buffer, 0, sizeof(buffer));
+    sendToEmailMock(TOO_HIGH);
+    const char* expected = "To: a.b@c.com\nHi, the temperature is too high\n";
+    assert(strcmp(buffer, expected) == 0);
+
+    memset(buffer, 0, sizeof(buffer));
+    sendToEmailMock(TOO_LOW);
+    expected = "To: a.b@c.com\nHi, the temperature is too low\n";
+    assert(strcmp(buffer, expected) == 0);
+
+    memset(buffer, 0, sizeof(buffer));
+    sendToEmailMock(NORMAL);
+    expected = "";
+    assert(strcmp(buffer, expected) == 0);
+}
+
 TEST(TypeWiseAlertTestSuite, test_alert_low_breach_to_controller) {
   BatteryCharacter batteryChar = {PASSIVE_COOLING," "};
   BreachType expected_breach = TOO_LOW;
@@ -61,19 +78,4 @@ TEST(TypeWiseAlertTestSuite, test_send_to_email) {
 }
 
 
-void testprintsendtoemail() {
-    memset(buffer, 0, sizeof(buffer));
-    sendToEmailMock(TOO_HIGH);
-    const char* expected = "To: a.b@c.com\nHi, the temperature is too high\n";
-    assert(strcmp(buffer, expected) == 0);
 
-    memset(buffer, 0, sizeof(buffer));
-    sendToEmailMock(TOO_LOW);
-    expected = "To: a.b@c.com\nHi, the temperature is too low\n";
-    assert(strcmp(buffer, expected) == 0);
-
-    memset(buffer, 0, sizeof(buffer));
-    sendToEmailMock(NORMAL);
-    expected = "";
-    assert(strcmp(buffer, expected) == 0);
-}
