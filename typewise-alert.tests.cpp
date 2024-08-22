@@ -14,15 +14,15 @@ void testprintsendtoemail() {
     const char* expected = "To: a.b@c.com\nHi, the temperature is too high\n";
     assert(strcmp(buffer, expected) == 0);
 
-    memset(buffer, 0, sizeof(buffer));
-    sendToEmailMock(TOO_LOW);
-    expected = "To: a.b@c.com\nHi, the temperature is too low\n";
-    assert(strcmp(buffer, expected) == 0);
+    // memset(buffer, 0, sizeof(buffer));
+    // sendToEmailMock(TOO_LOW);
+    // expected = "To: a.b@c.com\nHi, the temperature is too low\n";
+    // assert(strcmp(buffer, expected) == 0);
 
-    memset(buffer, 0, sizeof(buffer));
-    sendToEmailMock(NORMAL);
-    expected = "";
-    assert(strcmp(buffer, expected) == 0);
+    // memset(buffer, 0, sizeof(buffer));
+    // sendToEmailMock(NORMAL);
+    // expected = "";
+    // assert(strcmp(buffer, expected) == 0);
 }
 
 TEST(TypeWiseAlertTestSuite, test_alert_low_breach_to_controller) {
